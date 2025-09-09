@@ -15,3 +15,10 @@ class Venda(Base):
     id = Column(Integer, primary_key=True)
     produto_id = Column(Integer, ForeignKey('produtos.id'), nullable=False)
     quantidade = Column(Integer, nullable=False)
+
+class Cadastro(Base):
+    __tablename__ = 'cadastro'
+    id = Column(Integer, primary_key=True)
+    nome = Column(String, nullable=False)
+    email = Column(String, nullable=False, unique=True)
+    senha = Column(String, nullable=False)
